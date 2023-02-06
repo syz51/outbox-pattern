@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  rabbitmq:
+    image: rabbitmq:management-alpine
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+  sql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "yourStrong(!)Password"
